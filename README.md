@@ -96,11 +96,47 @@ DemoAnimal(cat)
 
 This approach would cut down with duplicate code, especially if you scale up to include more animals, rabbits, hamsters,...etc. Luckily that is possible using the 'interface' type. With interfaces we can end up with:
 
+```go
+package main
+
+import "github.com/Sher-Chowdhury/gsg_interfaces/pets"
+
+// Here we define an interface
+type FourLegged interface {
+	Walk()
+    Sit()
+    // Fetch()    // uncommenting this would cause cat to fail, because a cat.Fetch() method doesn't exist. 
+}
+
+// We can replace DemoDog and DemoCat
+// with this single function.
+func Demo(animal FourLegged) {
+	animal.Walk()
+    animal.Sit()
+}
+
+func main() {
+	dog := pets.Dog{"Fido", "Terrier"}
+	cat := pets.Cat{"Fluffy", "Siamese"}
+	Demo(dog)
+	Demo(cat)
+}
 ```
 
+This outputs:
+
 ```
+Fido walks across the room
+Fido sits down
+Fluffy walks across the room
+Fluffy sits down
+```
+
+So when we run Demo(cat), the Demo(animal FourLegged) function checks with 'type FourLegged interface' to see whether it can treat "cat" as an animal, which will only be true if a 'Walk' AND 'Sit' methods exists for the cat object, since those are the minimum requirements listed in the interface definitions. So it would fail if Fetch() is listed in the interface, even though the Demo() function doesn't actually calls the fetch() method. 
 
 
 ## Useful links
 
 https://blog.teamtreehouse.com/go-interfaces-awesome
+
+https://www.callicoder.com/golang-interfaces/
