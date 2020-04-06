@@ -103,7 +103,7 @@ import "github.com/Sher-Chowdhury/gsg_interfaces/pets"
 
 // Here we define an interface
 type FourLegged interface {
-	Walk()
+    Walk()
     Sit()
     // Fetch()    // uncommenting this would cause cat to fail, because a cat.Fetch() method doesn't exist. 
 }
