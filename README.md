@@ -102,11 +102,12 @@ import "github.com/Sher-Chowdhury/gsg_interfaces/pets"
 type FourLegged interface {
     Walk()
     Sit()
-    // Fetch()    // uncommenting this would cause cat to fail, because a cat.Fetch() method doesn't exist. 
+    // Fetch()    // uncommenting because this would cause cat to fail, because a cat.Fetch() method doesn't exist. 
 }
 
-// We can replace DemoDog and DemoCat
+// We have replaced DemoDog and DemoCat functions
 // with this single function.
+// This function accepts an interface as an input parameter. 
 func Demo(animal FourLegged) {
     animal.Walk()
     animal.Sit()
