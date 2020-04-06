@@ -111,15 +111,15 @@ type FourLegged interface {
 // We can replace DemoDog and DemoCat
 // with this single function.
 func Demo(animal FourLegged) {
-	animal.Walk()
+    animal.Walk()
     animal.Sit()
 }
 
 func main() {
-	dog := pets.Dog{"Fido", "Terrier"}
-	cat := pets.Cat{"Fluffy", "Siamese"}
-	Demo(dog)
-	Demo(cat)
+    dog := pets.Dog{"Fido", "Terrier"}
+    cat := pets.Cat{"Fluffy", "Siamese"}
+    Demo(dog)
+    Demo(cat)
 }
 ```
 
