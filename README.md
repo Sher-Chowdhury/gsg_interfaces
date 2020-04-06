@@ -67,14 +67,11 @@ func DemoCat(cat pets.Cat) {
 func main() {
     dog := pets.Dog{"Fido", "Terrier"}
     cat := pets.Cat{"Fluffy", "Siamese"}
-    DemoDog(dog)
-    // The above call outputs:
-    // Fido walks across the room
-    // Fido sits down
-    DemoCat(cat)
-    // The above call outputs:
-    // Fluffy walks across the room
-    // Fluffy sits down
+    DemoDog(dog)    // Fido walks across the room
+                    // Fido sits down
+
+    DemoCat(cat)    // Fluffy walks across the room
+                    // Fluffy sits down
 }
 ```
 
