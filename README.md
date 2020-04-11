@@ -1,5 +1,7 @@
 # gsg_interfaces
 
+Useful link: https://medium.com/rungo/interfaces-in-go-ab1601159b3a
+
 So far we've seen that a box can only store one type of data.
 
 
@@ -311,6 +313,8 @@ func main() {
 ```
 
 Notice how the interface can store object from different types of structs! That's the power of interfaces.
+
+Note, Rect structs can only implement the Shape interface if it has all the methods defined, as listed in interface defintion. i.e. if you delete the Rect's Perimeter() function definition then the code will fail.
 
 
 
