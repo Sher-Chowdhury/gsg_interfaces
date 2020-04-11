@@ -11,20 +11,33 @@ type FourLegged interface {
 
 // We can replace DemoDog and DemoCat
 // with this single function.
-func Demo(animal FourLegged) {
+func FunctionDemo(animal FourLegged) {
 	animal.Walk()
 	animal.Sit()
 }
 
+// Note you can't rewrite the above funciton
+// in the form of a method, since you're not
+// allowed to use an interface as a method receiver
+// only structs are allowed as method receivers.
+// func (animal FourLegged) MethodDemo() {
+//  	animal.Walk()
+//  	animal.Sit()
+// }
+
 func main() {
-	dog := pets.Dog{"Fido", "Terrier"}
+	var dog FourLegged = pets.Dog{"Fido", "Terrier"}
+
 	cat := pets.Cat{"Fluffy", "Siamese"}
-	Demo(dog)
-	// The above call (again) outputs:
+
+	FunctionDemo(dog)
 	// Fido walks across the room
 	// Fido sits down
-	Demo(cat)
-	// The above call (again) outputs:
+
+	// Note this still works if you pass in a struct instead of a interface.
+	// That's because golang is smart enough to know that that's what you intended.
+	FunctionDemo(cat)
 	// Fluffy walks across the room
 	// Fluffy sits down
+
 }
