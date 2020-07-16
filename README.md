@@ -394,7 +394,7 @@ To call these functions, we could have:
 ```go
 package main
 
-import "pets"
+import "github.com/Sher-Chowdhury/gsg_interfaces/pets"
 
 func DemoDog(dog pets.Dog) {
     dog.Walk()
