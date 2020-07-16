@@ -178,7 +178,7 @@ func main() {
 }
 ```
 
-Here we created an interface datatype called "Shape". We also created an object from this datatype called 'myShape'. In this example, this interface object's, box is storing a Rect struct object. Now we
+Here we declared an interface datatype called "Shape". We also created an object from this datatype called 'myShape'. In this example, this interface object's, box is storing a Rect struct object. Now we
 
 Note, we have to use the 'var myShape Shape =' rather than the ":=" syntax, because golang isn't smart enough to work out whether we want to create a "Shape" based object or a "Rect" object.
 
